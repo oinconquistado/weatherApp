@@ -6,4 +6,8 @@
   body {
     font-family: Roboto, sans-serif;
   }
+
+  body.dark {
+    background-color: #313131;
+  }
 }
