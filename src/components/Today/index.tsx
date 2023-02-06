@@ -5,7 +5,7 @@ const Today = () => {
   return (
     <div className='mt-[100px]'>
       <div className='grid place-items-center bg-mineshaft-100 text-mineshaft-800 dark:text-mineshaft-200 dark:bg-mineshaft-600 rounded-[20px] h-[85px] w-[390px]'>
-        <div className='grid grid-cols-2 grid-rows-2 h-[47px] w-[351px]'>
+        <div className='grid grid-cols-2 grid-rows-2 h-[50px] w-[350px]'>
           <div>
             <p className='font-bold'>Today</p>
           </div>
@@ -13,8 +13,10 @@ const Today = () => {
             <div>
               <p className='text-[15px] text-right'>29º max</p>
             </div>
-            <div className='mx-2 grid place-items-center'>
-              <IconItem mode='fill' path={variantArrow} w='16px' h='16px' />
+            <div>
+              <div className='mx-2'>
+                <p>/</p>
+              </div>
             </div>
             <div>
               <p className='text-[15px] text-right'>26º min</p>
