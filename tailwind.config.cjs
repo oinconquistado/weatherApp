@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
+        sans: "Robo",
       },
       colors: {
-        "mine-shaft": {
+        mineshaft: {
           50: "#f7f7f7",
           100: "#e3e3e3",
           200: "#c8c8c8",
