@@ -1,5 +1,4 @@
 import IconItem from "../IconItem";
-import { variantArrow } from "@/data/iconsPath";
 
 const Today = () => {
   return (
