@@ -1,9 +1,11 @@
-const ClimateItem = ({ icon, name }) => {
+import { IconItem } from "@/components";
+
+const ClimateItem = ({ path, name }) => {
   return (
     <div>
       <div className='flex gap-1.5 w-[150px] h-[32px]'>
         <div className='grid w-[28px] h-[32px]'>
-          <img src={icon} />
+          <IconItem mode='fill' path={path} w='28px' h='28px' />
         </div>
         <div className='grid place-items-center h-[32px]'>
           <p>{name}</p>

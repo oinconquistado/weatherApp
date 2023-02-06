@@ -1,3 +1,6 @@
+import IconItem from "../IconItem";
+import { variantArrow } from "@/data/iconsPath";
+
 const Today = () => {
   return (
     <div className='mt-[100px]'>
@@ -10,8 +13,8 @@ const Today = () => {
             <div>
               <p className='text-[15px] text-right'>29º max</p>
             </div>
-            <div className='mx-2'>
-              <img src='./icons/minmax.svg' alt='minmax' />
+            <div className='mx-2 grid place-items-center'>
+              <IconItem mode='fill' path={variantArrow} w='16px' h='16px' />
             </div>
             <div>
               <p className='text-[15px] text-right'>26º min</p>
