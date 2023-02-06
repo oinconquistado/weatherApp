@@ -29,7 +29,7 @@ const TopBar = () => {
             setDarkMode(!darkmode);
           }}
         >
-          <IconItem mode='stroke' path={moon} w='25px' h='25px' />
+          <IconItem mode='stroke' path={darkmode ? sun : moon} w='25px' h='25px' />
         </div>
       </div>
     </div>
