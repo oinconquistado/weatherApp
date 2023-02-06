@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className='App grid'></div>;
+  return (
+    <div className='App'>
+      <div className='bg-red-500'>Teste</div>
+    </div>
+  );
 }
 
 export default App;
