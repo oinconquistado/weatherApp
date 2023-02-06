@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-body {
-  background: #f7f7f7;
-  font-family: "Roboto", sans-serif;
+@layer base {
+  body {
+    font-family: Roboto, sans-serif;
+  }
 }
