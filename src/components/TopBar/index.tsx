@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { IconItem } from "@/components";
 import { darkModeIcons } from "@/data/iconsPath";
-
-const { sun, moon } = darkModeIcons;
+import DataContext from "@/context/DataContex";
 
 const TopBar = () => {
-  let body: HTMLBodyElement | null;
+  const { sun, moon } = darkModeIcons;
+  const { darkmode, setDarkMode } = DataContext();
 
   useEffect(() => {
+    let body: HTMLBodyElement | null;
     body = document.querySelector("body");
-    body?.classList.add("dark");
-  }, []);
+    body?.classList.toggle("dark");
+  }, [darkmode]);
 
   return (
     <div className='w-[430px] h-[62px] mt-[22px]'>
@@ -21,7 +22,13 @@ const TopBar = () => {
           </h5>
           <p className='text-[15px] text-mineshaft-300'>Sunday, 1AM</p>
         </div>
-        <div className='grid place-items-center w-[25px] h-[25px] cursor-pointer'>
+        <div
+          className='grid place-items-center w-[25px] h-[25px] cursor-pointer'
+          onClick={(e) => {
+            e.preventDefault();
+            setDarkMode(!darkmode);
+          }}
+        >
           <IconItem mode='stroke' path={moon} w='25px' h='25px' />
         </div>
       </div>
