@@ -8,8 +8,6 @@ const Main = () => {
   let { description, icon }: { description: string; icon: string } = weather[0];
   description = description.charAt(0).toUpperCase() + description.slice(1);
 
-  console.log(icon);
-
   if (main && weather)
     return (
       <div className='grid place-items-center h-[46.1vh] mt-[6.4vh] w-screen'>
