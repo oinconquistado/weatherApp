@@ -1,5 +1,3 @@
-import IconItem from "../IconItem";
-
 const Today = () => {
   return (
     <div className='mt-[10.7vh]'>

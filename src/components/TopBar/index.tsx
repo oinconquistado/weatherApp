@@ -1,10 +1,7 @@
 import { useEffect } from "react";
-import { IconItem } from "@/components";
-import { darkModeIcons } from "@/data/iconsPath";
 import DataContext from "@/context/DataContex";
 
 const TopBar = () => {
-  const { sun, moon } = darkModeIcons;
   const { darkmode, setDarkMode } = DataContext();
 
   useEffect(() => {
@@ -28,15 +25,7 @@ const TopBar = () => {
             e.preventDefault();
             setDarkMode(!darkmode);
           }}
-        >
-          <IconItem
-            mode='stroke'
-            path={darkmode ? sun : moon}
-            w='25px'
-            h='25px
-          '
-          />
-        </div>
+        ></div>
       </div>
     </div>
   );
