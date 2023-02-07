@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import DataContext from "@/context/DataContex";
-import { Sun, Moon } from "@/icons";
+import { Sun, Moon } from "@/style/icons";
 
 const TopBar = () => {
   const { darkmode, setDarkMode } = DataContext();

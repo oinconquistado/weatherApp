@@ -1,5 +1,5 @@
 import { ClimateItem } from "@/components/";
-import { Humidity, Wind, Cloud, Barometer } from "@/icons/";
+import { Humidity, Wind, Cloud, Barometer } from "@/style/icons/";
 
 const data = [
   {
