@@ -1,30 +1,35 @@
 import { ClimateItem } from "@/components/";
+import DataContext from "@/context/DataContex";
 import { Humidity, Wind, Cloud, Barometer } from "@/style/icons/";
 
-const infoData = [
-  {
-    icon: <Humidity />,
-    name: "Humidity",
-    value: "25%",
-  },
-  {
-    icon: <Wind />,
-    name: "Wind",
-    value: "23 km/h ",
-  },
-  {
-    icon: <Barometer />,
-    name: "Bar.",
-    value: "1010 mb",
-  },
-  {
-    icon: <Cloud />,
-    name: "Clouds",
-    value: "40%",
-  },
-];
-
 const Details = () => {
+  const { weatherData } = DataContext();
+
+  const { wind, main, clouds } = weatherData;
+
+  const infoData = [
+    {
+      icon: <Humidity />,
+      name: "Humidity",
+      value: `${main.humidity}%`,
+    },
+    {
+      icon: <Wind />,
+      name: "Wind",
+      value: `${wind.speed} km/h`,
+    },
+    {
+      icon: <Barometer />,
+      name: "Bar.",
+      value: `${main.pressure} mb`,
+    },
+    {
+      icon: <Cloud />,
+      name: "Clouds",
+      value: `${clouds.all}%`,
+    },
+  ];
+
   return (
     <div className='mt-[0.1vh]'>
       <div className='grid place-items-center text-[.9063rem] bg-mineshaft-100 text-mineshaft-900 dark:bg-mineshaft-600 dark:text-mineshaft-200 rounded-[1.25rem] h-[11.8vh] w-[90.7vw]'>
