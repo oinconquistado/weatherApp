@@ -1,23 +1,29 @@
 import { TopBar, Main, Today, Details } from "@/components";
-import { QueryData } from "./services";
 import { useEffect } from "react";
 import DataContext from "./context/DataContex";
 
 const appID = import.meta.env.VITE_APPID;
+
 function App() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=-2.529450&lon=-44.296951&units=metric&lang=pt_br&appid=${appID}`;
-
-  const initalData = new QueryData("initalData", url);
-
   const { weatherData, setWeatherData } = DataContext();
 
-  const { data, isLoading, isFetching } = initalData.getData();
+  const getData = async (latitude: number, longitude: number) => {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=pt_br&appid=${appID}`
+    )
+      .then((response) => response.json())
+      .then((data) => setWeatherData(data));
+  };
+
+  const getPostion = async () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      getData(position.coords.latitude, position.coords.longitude);
+    });
+  };
 
   useEffect(() => {
-    if (data) setWeatherData(data);
-  });
-
-  useEffect(() => {}, [weatherData]);
+    getPostion();
+  }, []);
 
   if (weatherData.base === "stations")
     return (
