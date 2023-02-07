@@ -15,21 +15,27 @@ const TopBar = () => {
 
   return (
     <div className='w-screen h-[6.7vh] mt-[3vh]'>
-      <div className='flex items-center justify-between mx-[5vw]'>
-        <div>
+      <div className='grid grid-flow-col	 items-center justify-between mx-[5vw] h-[62px]'>
+        <div className=''>
           <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
             São Luis, MA
           </h5>
           <p className='text-[.9375rem] text-mineshaft-300'>Sunday, 1AM</p>
         </div>
         <div
-          className='grid place-items-center w-[6.3vw] h-[2.9vh] cursor-pointer'
+          className='grid place-items-center w-[6.3vw] h-[62px] cursor-pointer'
           onClick={(e) => {
             e.preventDefault();
             setDarkMode(!darkmode);
           }}
         >
-          <IconItem mode='stroke' path={darkmode ? sun : moon} w='2.4vh' h='2.7vh' />
+          <IconItem
+            mode='stroke'
+            path={darkmode ? sun : moon}
+            w='25px'
+            h='25px
+          '
+          />
         </div>
       </div>
     </div>

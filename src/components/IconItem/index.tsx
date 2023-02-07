@@ -16,7 +16,7 @@ const IconItem = ({ path, w, h, mode }: IconItemProps) => {
   }
 
   return (
-    <svg className={`${svgStyle} w-[${w}] h-[${h}] max-w-full	max-h-full  `}>
+    <svg className={svgStyle} width={w} height={h}>
       <path d={path} />
     </svg>
   );
