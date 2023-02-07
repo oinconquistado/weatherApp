@@ -4,7 +4,7 @@ const Main = () => {
       <div className='grid place-items-center w-[88.4vw] h-[30.8vh]'>
         <img src='./graph/sun.svg' alt='sun' />
         <div>
-          <h1 className='font-bold text-mineshaft-900 dark:text-mineshaft-100 text-[40px] font-bold'>
+          <h1 className='font-bold text-mineshaft-900 dark:text-mineshaft-100 text-[2.5rem] font-bold'>
             28º
           </h1>
         </div>
