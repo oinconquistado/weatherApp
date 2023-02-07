@@ -14,8 +14,8 @@ const TopBar = () => {
   }, [darkmode]);
 
   return (
-    <div className='w-screen h-[6.7vh] mt-[2.4vh]'>
-      <div className='flex items-center justify-between mx-[2.4vw]'>
+    <div className='w-screen h-[6.7vh] mt-[3vh]'>
+      <div className='flex items-center justify-between mx-[5vw]'>
         <div>
           <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
             São Luis, MA
