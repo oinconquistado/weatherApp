@@ -16,7 +16,16 @@ const IconItem = ({ path, w, h, mode }: IconItemProps) => {
   }
 
   return (
-    <svg className={svgStyle} width={w} height={h}>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      // fill='none'
+      viewBox={`0 0 ${w} ${h}`}
+      // strokeWidth={1.5}
+      // stroke='currentColor'
+      className={`w-[${w}] h-[${h}] svgStyle m-0`}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
       <path d={path} />
     </svg>
   );
