@@ -14,22 +14,22 @@ const TopBar = () => {
   }, [darkmode]);
 
   return (
-    <div className='w-[430px] h-[62px] mt-[22px]'>
-      <div className='flex items-center justify-between mx-[25px]'>
+    <div className='w-screen h-[6.7vh] mt-[2.4vh]'>
+      <div className='flex items-center justify-between mx-[2.4vw]'>
         <div>
           <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
             São Luis, MA
           </h5>
-          <p className='text-[15px] text-mineshaft-300'>Sunday, 1AM</p>
+          <p className='text-[.9375rem] text-mineshaft-300'>Sunday, 1AM</p>
         </div>
         <div
-          className='grid place-items-center w-[25px] h-[25px] cursor-pointer'
+          className='grid place-items-center w-[5.8vw] h-[2.7vh] cursor-pointer'
           onClick={(e) => {
             e.preventDefault();
             setDarkMode(!darkmode);
           }}
         >
-          <IconItem mode='stroke' path={darkmode ? sun : moon} w='25px' h='25px' />
+          <IconItem mode='stroke' path={darkmode ? sun : moon} w='2.4vh' h='2.7vh' />
         </div>
       </div>
     </div>
