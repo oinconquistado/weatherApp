@@ -3,14 +3,14 @@ import { IconItem } from "@/components";
 const ClimateItem = ({ path, name }) => {
   return (
     <div>
-      <div className='flex gap-1.5 w-[150px] h-[32px]'>
-        <div className='grid w-[28px] h-[32px]'>
-          <IconItem mode='fill' path={path} w='28px' h='28px' />
+      <div className='flex gap-1.5 w-[34.9vw] h-[3.4vh]'>
+        <div className='grid w-[6.5vw] h-[3.4vh]'>
+          <IconItem mode='fill' path={path} w='6.5vw' h='6.5vw' />
         </div>
-        <div className='grid place-items-center h-[32px]'>
+        <div className='grid place-items-center h-[3.4vh]'>
           <p>{name}</p>
         </div>
-        <div className='grid place-items-center h-[32px]'>
+        <div className='grid place-items-center h-[3.4vh]'>
           <p>75%</p>
         </div>
       </div>
