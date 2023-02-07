@@ -23,7 +23,7 @@ const TopBar = () => {
           <p className='text-[.9375rem] text-mineshaft-300'>Sunday, 1AM</p>
         </div>
         <div
-          className='grid place-items-center w-[5.8vw] h-[2.7vh] cursor-pointer'
+          className='grid place-items-center w-[6.3vw] h-[2.9vh] cursor-pointer'
           onClick={(e) => {
             e.preventDefault();
             setDarkMode(!darkmode);
