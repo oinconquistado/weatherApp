@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import DataContext from "@/context/DataContex";
+import { Sun, Moon } from "@/icons";
 
 const TopBar = () => {
   const { darkmode, setDarkMode } = DataContext();
@@ -25,7 +26,9 @@ const TopBar = () => {
             e.preventDefault();
             setDarkMode(!darkmode);
           }}
-        ></div>
+        >
+          {darkmode ? <Sun /> : <Moon />}
+        </div>
       </div>
     </div>
   );
