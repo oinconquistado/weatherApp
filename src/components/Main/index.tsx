@@ -5,14 +5,20 @@ const Main = () => {
 
   const { main, weather } = weatherData;
   const { temp }: { temp: number } = main;
-  let { description }: { description: string } = weather[0];
+  let { description, icon }: { description: string; icon: string } = weather[0];
   description = description.charAt(0).toUpperCase() + description.slice(1);
+
+  console.log(icon);
 
   if (main && weather)
     return (
       <div className='grid place-items-center h-[46.1vh] mt-[6.4vh] w-screen'>
         <div className='grid place-items-center w-[88.4vw] h-[30.8vh]'>
-          <img src='./graph/sun.svg' alt='sun' />
+          <img
+            className='h-[100px]'
+            src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+            alt={description}
+          />
           <div>
             <h1 className='font-bold text-mineshaft-900 dark:text-mineshaft-100 text-[2.5rem] font-bold'>
               {temp.toFixed(0)}º
