@@ -1,4 +1,5 @@
 import DataContext from "@/context/DataContext";
+import Spinner from "../Spinner/Spinner";
 
 const Today = () => {
   const { weatherData } = DataContext();
@@ -43,6 +44,13 @@ const Today = () => {
         </div>
       </div>
     );
+  else {
+    return (
+      <div className='mt-[10.7vh]'>
+        <Spinner />
+      </div>
+    );
+  }
 };
 
 export default Today;

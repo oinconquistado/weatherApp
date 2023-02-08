@@ -1,6 +1,7 @@
 import { Sun, Moon } from "@/style/icons";
 import { convertDateTime } from "@/functions";
 import DataContext from "@/context/DataContext";
+import Spinner from "../Spinner/Spinner";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, locationData, weatherData } = DataContext();
@@ -32,6 +33,13 @@ const TopBar = () => {
         </div>
       </div>
     );
+  else {
+    return (
+      <div className='w-screen h-[6.7vh] mt-[3vh]'>
+        <Spinner />
+      </div>
+    );
+  }
 };
 
 export default TopBar;

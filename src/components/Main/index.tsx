@@ -1,4 +1,5 @@
 import DataContext from "@/context/DataContext";
+import Spinner from "../Spinner/Spinner";
 
 const Main = () => {
   const { weatherData } = DataContext();
@@ -24,6 +25,13 @@ const Main = () => {
         </div>
       </div>
     );
+  else {
+    return (
+      <div className='grid place-items-center h-[46.1vh] mt-[6.4vh] w-screen'>
+        <Spinner />
+      </div>
+    );
+  }
 };
 
 export default Main;
