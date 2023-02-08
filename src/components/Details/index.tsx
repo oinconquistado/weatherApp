@@ -1,4 +1,4 @@
-import { ClimateItem } from "@/components/";
+import { ClimateItem, Spinner } from "@/components/";
 import DataContext from "@/context/DataContext";
 import { Humidity, Wind, Cloud, Barometer } from "@/style/icons/";
 

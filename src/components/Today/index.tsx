@@ -46,8 +46,8 @@ const Today = () => {
     );
   else {
     return (
-      <div className='mt-[10.7vh]'>
-        <Spinner />
+      <div className='grid place-items-center h-[9.1vh] w-[90.7vw]'>
+        <Spinner w='8' h='8' />
       </div>
     );
   }
