@@ -13,7 +13,7 @@ const TopBar = () => {
   if (name && sys?.country && timeAndData.length)
     return (
       <div className='w-screen h-[6.7vh] mt-[3vh] animate-showDown'>
-        <div className='grid grid-flow-col	 items-center justify-between mx-[5vw] h-[62]'>
+        <div className='grid grid-flow-col items-center justify-between mx-[5vw] h-full'>
           <div>
             <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
               {name}, {sys.country}
@@ -22,7 +22,7 @@ const TopBar = () => {
             <p className='text-[.9375rem] text-mineshaft-300'>{timeAndData}</p>
           </div>
           <div
-            className='grid place-items-center w-[6.3vw] h-[62] cursor-pointer'
+            className='grid place-items-center w-[3vh] h-[3vh] cursor-pointer'
             onClick={(e) => {
               e.preventDefault();
               setDarkMode(!darkmode);

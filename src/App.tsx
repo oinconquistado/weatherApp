@@ -13,8 +13,8 @@ function App() {
       {weatherData.base === "stations" ? (
         <MainPage />
       ) : (
-        <div className='w-screen h-screen grid place-items-center'>
-          <Spinner w='64' h='64' />
+        <div className='w-screen h-screen grid place-items-center '>
+          <Spinner w='24' h='24' />
         </div>
       )}
     </>
