@@ -4,11 +4,14 @@
 
 @layer base {
   body {
+    background-color: #fff;
     font-family: Roboto, sans-serif;
   }
 
-  body.dark {
-    background-color: #313131;
+  * {
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
   }
 
   svg {
