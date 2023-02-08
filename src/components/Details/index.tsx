@@ -11,22 +11,22 @@ const Details = () => {
     {
       icon: <Humidity />,
       name: "Humidity",
-      value: `${main.humidity}%`,
+      value: `${main.humidity.toFixed(0)}%`,
     },
     {
       icon: <Wind />,
       name: "Wind",
-      value: `${wind.speed} km/h`,
+      value: `${wind.speed.toFixed(0)} km/h`,
     },
     {
       icon: <Barometer />,
       name: "Bar.",
-      value: `${main.pressure} mb`,
+      value: `${main.pressure.toFixed(0)} mb`,
     },
     {
       icon: <Cloud />,
       name: "Clouds",
-      value: `${clouds.all}%`,
+      value: `${clouds.all.toFixed(0)}%`,
     },
   ];
 
