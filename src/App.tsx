@@ -30,7 +30,7 @@ function App() {
 
   if (main && name)
     return (
-      <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen'>
+      <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen overflow-hidden	'>
         <HelmetProvider>
           <Helmet>
             <meta charSet='utf-8' />
