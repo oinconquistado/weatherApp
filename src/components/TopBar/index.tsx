@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import DataContext from "@/context/DataContex";
 import { Sun, Moon } from "@/style/icons";
+import { convertDateTime } from "@/functions";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
@@ -8,19 +9,6 @@ const TopBar = () => {
   const timeapi = import.meta.env.VITE_TIMEAPI;
 
   const { name, sys }: any = weatherData;
-
-  function convertDateTime(datetime: string, gmt_offset: number) {
-    const date = new Date(datetime);
-    const daysOfWeek = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
-    const dayOfWeek = daysOfWeek[date.getUTCDay()];
-    let hours = date.getUTCHours() + gmt_offset;
-    const minutes = date.getUTCMinutes();
-    const seconds = date.getUTCSeconds();
-
-    let finalminutes = minutes < 10 ? `${minutes}`.padStart(2, "0") : minutes;
-
-    return `${dayOfWeek}, ${hours}:${finalminutes} `;
-  }
 
   const getData = async () => {
     let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=${timeapi}&location=${name},${sys.country}`;
