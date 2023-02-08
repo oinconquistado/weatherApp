@@ -10,7 +10,13 @@ function App() {
     <>
       <FetchInitialData />
       <DarkModeManager />
-      {weatherData.base === "stations" ? <MainPage /> : <Spinner />}
+      {weatherData.base === "stations" ? (
+        <MainPage />
+      ) : (
+        <div className='w-screen h-screen grid place-items-center'>
+          <Spinner w='64' h='64' />
+        </div>
+      )}
     </>
   );
 }
