@@ -34,7 +34,6 @@ const TopBar = () => {
   }, [sys]);
 
   const { datetime, gmt_offset } = locationData;
-  console.log(datetime);
 
   let timeAndData: string = convertDateTime(datetime, gmt_offset);
 
