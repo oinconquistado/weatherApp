@@ -5,6 +5,33 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        showDown: "slideDown 2s forwards;",
+        showUP: "slideUp 2s forwards",
+      },
+      keyframes: {
+        slideDown: {
+          "0%": {
+            opacity: 0,
+            transform: "translate3d(0, -30px, 0)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate3d(0, 0, 0)",
+          },
+        },
+        slideUp: {
+          "0%": {
+            opacity: 0,
+            transform: "translate3d(0, 50px, 0)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate3d(0, 0, 0)",
+          },
+        },
+      },
+
       fontFamily: {
         sans: "Robo",
       },

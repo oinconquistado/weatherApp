@@ -25,7 +25,7 @@ const TopBar = () => {
 
   if (name.length && sys?.country)
     return (
-      <div className='w-screen h-[6.7vh] mt-[3vh]'>
+      <div className='w-screen h-[6.7vh] mt-[3vh] animate-showDown'>
         <div className='grid grid-flow-col	 items-center justify-between mx-[5vw] h-[62]'>
           <div className=''>
             <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>

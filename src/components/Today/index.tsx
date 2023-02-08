@@ -14,7 +14,7 @@ const Today = () => {
 
   if (temp_min && temp_max && feels_like)
     return (
-      <div className='mt-[10.7vh]'>
+      <div className='mt-[10.7vh] animate-showUP'>
         <div className='grid place-items-center bg-mineshaft-100 text-mineshaft-800 dark:text-mineshaft-200 dark:bg-mineshaft-600 rounded-[1.25rem] h-[9.1vh] w-[90.7vw]'>
           <div className='grid grid-cols-2 grid-rows-2 h-[5.4vh] w-[81.4vw]'>
             <div>

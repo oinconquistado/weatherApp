@@ -31,7 +31,7 @@ const Details = () => {
   ];
 
   return (
-    <div className='mt-[0.1vh]'>
+    <div className='mt-[0.1vh] animate-showUP'>
       <div className='grid place-items-center text-[.9063rem] bg-mineshaft-100 text-mineshaft-900 dark:bg-mineshaft-600 dark:text-mineshaft-200 rounded-[1.25rem] h-[11.8vh] w-[90.7vw]'>
         <div className='grid gap-x-[1.7rem] grid-rows-2 grid-cols-2 w-[80vw] h-[9vh]'>
           {infoData.map((item, index) => (
