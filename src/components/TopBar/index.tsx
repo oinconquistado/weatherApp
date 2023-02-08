@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import DataContext from "@/context/DataContex";
 import { Sun, Moon } from "@/style/icons";
-import { QueryData } from "@/services";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, weatherData } = DataContext();
