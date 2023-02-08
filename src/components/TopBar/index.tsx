@@ -1,23 +1,25 @@
 import { useEffect } from "react";
-import DataContext from "@/context/DataContex";
+import { fetchData } from "@/classes";
 import { Sun, Moon } from "@/style/icons";
-import { convertDateTime } from "@/functions";
 import { darkModeManger } from "@/controllers";
+import { convertDateTime } from "@/functions";
+import DataContext from "@/context/DataContex";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
-  const timeapi = import.meta.env.VITE_TIMEAPI;
   const { name, sys }: any = weatherData;
 
-  const getData = async () => {
-    let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=${timeapi}&location=${name},${sys.country}`;
-    await fetch(url)
-      .then((response) => response.json())
-      .then((data) => setLocationData(data));
+  const dataFetcher = async () => {
+    const timeapi = import.meta.env.VITE_TIMEAPI;
+    let baseurl = `https://timezone.abstractapi.com/v1/current_time/`;
+    let urlparams = `?api_key=${timeapi}&location=${name},${sys.country}`;
+    const getTimeData = new fetchData(`${baseurl}${urlparams}`);
+    const { response } = await getTimeData.getData();
+    setLocationData(response);
   };
 
   useEffect(() => {
-    getData();
+    dataFetcher();
   }, [sys]);
 
   const { datetime, gmt_offset } = locationData;

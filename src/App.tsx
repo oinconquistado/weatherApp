@@ -1,13 +1,13 @@
-import { TopBar, Main, Today, Details, Spinner } from "@/components";
+import { fetchData } from "@/classes";
 import { useEffect } from "react";
-import DataContext from "./context/DataContex";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { fetchData } from "./classes";
+import { TopBar, Main, Today, Details, Spinner } from "@/components";
+import DataContext from "@/context/DataContex";
 
 function App() {
   const { weatherData, setWeatherData } = DataContext();
 
-  const getData = async (latitude: number, longitude: number) => {
+  const dataFetcher = async (latitude: number, longitude: number) => {
     const APPID = import.meta.env.VITE_APPID;
     const baseurl = `https://api.openweathermap.org/data/2.5/`;
     const urlparams = `weather?lat=${latitude}&lon=${longitude}&units=metric&lang=pt_br&appid=${APPID}`;
@@ -18,7 +18,7 @@ function App() {
 
   const getPostion = async () => {
     navigator.geolocation.getCurrentPosition((position) => {
-      getData(position.coords.latitude, position.coords.longitude);
+      dataFetcher(position.coords.latitude, position.coords.longitude);
     });
   };
 
