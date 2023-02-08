@@ -7,9 +7,10 @@ function App() {
   const { weatherData, setWeatherData } = DataContext();
 
   const getData = async (latitude: number, longitude: number) => {
-    const appID = import.meta.env.VITE_APPID;
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=pt_br&appid=${appID}`
+    const APPID = import.meta.env.VITE_APPID;
+
+    await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=pt_br&appid=${APPID}`
     )
       .then((response) => response.json())
       .then((data) => setWeatherData(data));

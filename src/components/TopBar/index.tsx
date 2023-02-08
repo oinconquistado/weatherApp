@@ -3,19 +3,40 @@ import DataContext from "@/context/DataContex";
 import { Sun, Moon } from "@/style/icons";
 
 const TopBar = () => {
-  const { darkmode, setDarkMode, weatherData } = DataContext();
+  const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
 
-  const { name, sys, timezone }: { name: string; sys: any; timezone: number } = weatherData;
+  const timeapi = import.meta.env.VITE_TIMEAPI;
 
-  // let url = "http://worldtimeapi.org/api/ip";
+  const { name, sys }: any = weatherData;
 
-  // const getTime = new QueryData("timezone", url);
+  function convertDateTime(datetime: string, gmt_offset: number) {
+    const date = new Date(datetime);
+    const daysOfWeek = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    const dayOfWeek = daysOfWeek[date.getUTCDay()];
+    let hours = date.getUTCHours() + gmt_offset;
+    const minutes = date.getUTCMinutes();
+    const seconds = date.getUTCSeconds();
 
-  // const { data } = getTime.getData();
+    let finalminutes = minutes < 10 ? `${minutes}`.padStart(2, "0") : minutes;
 
-  // useEffect(() => {
-  //   console.log(data);
-  // }, [data]);
+    return `${dayOfWeek}, ${hours}:${finalminutes} `;
+  }
+
+  const getData = async () => {
+    let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=${timeapi}&location=${name},${sys.country}`;
+    await fetch(url)
+      .then((response) => response.json())
+      .then((data) => setLocationData(data));
+  };
+
+  useEffect(() => {
+    getData();
+  }, [sys]);
+
+  const { datetime, gmt_offset } = locationData;
+  console.log(datetime);
+
+  let timeAndData: string = convertDateTime(datetime, gmt_offset);
 
   useEffect(() => {
     let body: HTMLBodyElement | null;
@@ -23,16 +44,16 @@ const TopBar = () => {
     body?.classList.toggle("dark");
   }, [darkmode]);
 
-  if (name.length && sys?.country)
+  if (name.length && sys?.country && timeAndData.length)
     return (
       <div className='w-screen h-[6.7vh] mt-[3vh] animate-showDown'>
         <div className='grid grid-flow-col	 items-center justify-between mx-[5vw] h-[62]'>
-          <div className=''>
+          <div>
             <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
               {name}, {sys.country}
             </h5>
 
-            <p className='text-[.9375rem] text-mineshaft-300'>Sunday, 1AM</p>
+            <p className='text-[.9375rem] text-mineshaft-300'>{timeAndData}</p>
           </div>
           <div
             className='grid place-items-center w-[6.3vw] h-[62] cursor-pointer'
