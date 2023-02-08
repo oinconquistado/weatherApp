@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import DataContext from "@/context/DataContex";
 import { Sun, Moon } from "@/style/icons";
 import { convertDateTime } from "@/functions";
+import { darkModeManger } from "@/controllers";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
@@ -26,9 +27,7 @@ const TopBar = () => {
   let timeAndData: string = convertDateTime(datetime, gmt_offset);
 
   useEffect(() => {
-    let body: HTMLBodyElement | null;
-    body = document.querySelector("body");
-    body?.classList.toggle("dark");
+    darkModeManger();
   }, [darkmode]);
 
   if (name.length && sys?.country && timeAndData.length)
