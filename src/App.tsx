@@ -29,20 +29,20 @@ function App() {
 
   if (main && name)
     return (
-      <HelmetProvider>
-        <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen'>
+      <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen'>
+        <HelmetProvider>
           <Helmet>
             <meta charSet='utf-8' />
             <title>
               WeatherApp - {name} {main?.temp.toFixed(0)}º
             </title>
           </Helmet>
-          <TopBar />
-          <Main />
-          <Today />
-          <Details />
-        </div>
-      </HelmetProvider>
+        </HelmetProvider>
+        <TopBar />
+        <Main />
+        <Today />
+        <Details />
+      </div>
     );
   else return <Spinner />;
 }
