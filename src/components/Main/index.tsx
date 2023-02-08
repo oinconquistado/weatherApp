@@ -28,7 +28,7 @@ const Main = () => {
   else {
     return (
       <div className='grid place-items-center h-[46.1vh] mt-[6.4vh] w-screen'>
-        <Spinner />
+        <Spinner w='64' h='64' />
       </div>
     );
   }

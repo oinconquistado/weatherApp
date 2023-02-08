@@ -35,8 +35,10 @@ const TopBar = () => {
     );
   else {
     return (
-      <div className='w-screen h-[6.7vh] mt-[3vh]'>
-        <Spinner />
+      <div className='grid place-items-center h-[6.7vh] w-screen h-2 mt-[3vh]'>
+        {/* <div>
+          <Spinner h='8' w='8' />
+        </div> */}
       </div>
     );
   }
