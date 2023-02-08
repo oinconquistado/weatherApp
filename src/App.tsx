@@ -1,7 +1,7 @@
 import { TopBar, Main, Today, Details, Spinner } from "@/components";
 import { useEffect } from "react";
 import DataContext from "./context/DataContex";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
   const { weatherData, setWeatherData } = DataContext();
@@ -29,18 +29,20 @@ function App() {
 
   if (main && name)
     return (
-      <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen'>
-        <Helmet>
-          <meta charSet='utf-8' />
-          <title>
-            WeatherApp - {name} {main?.temp.toFixed(0)}º
-          </title>
-        </Helmet>
-        <TopBar />
-        <Main />
-        <Today />
-        <Details />
-      </div>
+      <HelmetProvider>
+        <div className='App grid justify-items-center dark:bg-mineshaft-900 w-screen h-screen'>
+          <Helmet>
+            <meta charSet='utf-8' />
+            <title>
+              WeatherApp - {name} {main?.temp.toFixed(0)}º
+            </title>
+          </Helmet>
+          <TopBar />
+          <Main />
+          <Today />
+          <Details />
+        </div>
+      </HelmetProvider>
     );
   else return <Spinner />;
 }
