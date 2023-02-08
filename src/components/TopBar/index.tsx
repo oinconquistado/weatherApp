@@ -6,9 +6,7 @@ import { darkModeManger } from "@/controllers";
 
 const TopBar = () => {
   const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
-
   const timeapi = import.meta.env.VITE_TIMEAPI;
-
   const { name, sys }: any = weatherData;
 
   const getData = async () => {
@@ -23,7 +21,6 @@ const TopBar = () => {
   }, [sys]);
 
   const { datetime, gmt_offset } = locationData;
-
   let timeAndData: string = convertDateTime(datetime, gmt_offset);
 
   useEffect(() => {
