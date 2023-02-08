@@ -1,4 +1,4 @@
-import DataContext from "@/context/DataContex";
+import DataContext from "@/context/DataContext";
 
 const Today = () => {
   const { weatherData } = DataContext();
@@ -43,7 +43,6 @@ const Today = () => {
         </div>
       </div>
     );
-  else return <>Carregando...</>;
 };
 
 export default Today;

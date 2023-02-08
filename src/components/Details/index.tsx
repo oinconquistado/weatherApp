@@ -1,5 +1,5 @@
 import { ClimateItem } from "@/components/";
-import DataContext from "@/context/DataContex";
+import DataContext from "@/context/DataContext";
 import { Humidity, Wind, Cloud, Barometer } from "@/style/icons/";
 
 const Details = () => {

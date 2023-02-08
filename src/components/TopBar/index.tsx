@@ -1,35 +1,15 @@
-import { useEffect } from "react";
-import { fetchData } from "@/classes";
 import { Sun, Moon } from "@/style/icons";
-import { darkModeManger } from "@/controllers";
 import { convertDateTime } from "@/functions";
-import DataContext from "@/context/DataContex";
+import DataContext from "@/context/DataContext";
 
 const TopBar = () => {
-  const { darkmode, setDarkMode, weatherData, locationData, setLocationData } = DataContext();
+  const { darkmode, setDarkMode, locationData, weatherData } = DataContext();
   const { name, sys }: any = weatherData;
-
-  const dataFetcher = async () => {
-    const timeapi = import.meta.env.VITE_TIMEAPI;
-    let baseurl = `https://timezone.abstractapi.com/v1/current_time/`;
-    let urlparams = `?api_key=${timeapi}&location=${name},${sys.country}`;
-    const getTimeData = new fetchData(`${baseurl}${urlparams}`);
-    const { response } = await getTimeData.getData();
-    setLocationData(response);
-  };
-
-  useEffect(() => {
-    dataFetcher();
-  }, [sys]);
 
   const { datetime, gmt_offset } = locationData;
   let timeAndData: string = convertDateTime(datetime, gmt_offset);
 
-  useEffect(() => {
-    darkModeManger();
-  }, [darkmode]);
-
-  if (name.length && sys?.country && timeAndData.length)
+  if (name && sys?.country && timeAndData.length)
     return (
       <div className='w-screen h-[6.7vh] mt-[3vh] animate-showDown'>
         <div className='grid grid-flow-col	 items-center justify-between mx-[5vw] h-[62]'>
@@ -52,7 +32,6 @@ const TopBar = () => {
         </div>
       </div>
     );
-  else return <>Carregando...</>;
 };
 
 export default TopBar;

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Spinner = () => {
   return (
     <div className='grid  place-items-center h-screen w-screen' role='status'>
