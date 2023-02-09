@@ -1,9 +1,12 @@
-const Spinner = ({ w, h }) => {
+const Spinner = ({ h, w }) => {
+  const styleContainer = `grid place-items-center w-11/12 h-5/6`;
+  const stylesvg = `w-[${w}vh] h-[${h}vh]`;
+
   return (
-    <div className={`grid  place-items-center h-full w-full`} role='status'>
+    <div className={styleContainer} role='status'>
       <svg
         aria-hidden='true'
-        className={`w-${w} h-${h} mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-mineshaft-900`}
+        className={`${stylesvg} text-gray-200 animate-spin dark:text-gray-600 fill-mineshaft-900`}
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
