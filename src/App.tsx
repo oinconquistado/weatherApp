@@ -14,7 +14,7 @@ function App() {
         <MainPage />
       ) : (
         <div className='grid place-items-center h-screen w-screen'>
-          <Spinner w='10' h='10' />
+          <Spinner size='12' />
         </div>
       )}
     </>
