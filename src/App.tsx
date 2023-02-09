@@ -10,8 +10,7 @@ function App() {
     <>
       <FetchInitialData />
       <DarkModeManager />
-      {/* {weatherData.base === "stations" ? ( */}
-      {false ? (
+      {weatherData.base === "stations" ? (
         <MainPage />
       ) : (
         <div className='grid place-items-center h-screen w-screen'>

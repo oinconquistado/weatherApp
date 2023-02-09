@@ -12,8 +12,8 @@ const TopBar = () => {
 
   if (name && sys?.country && timeAndData.length)
     return (
-      <div className='w-screen h-[6.7vh] mt-[3vh] animate-showDown'>
-        <div className='grid grid-flow-col items-center justify-between mx-[5vw] h-full'>
+      <div className='animate-showDown'>
+        <div className='grid grid-flow-col items-center justify-between mx-[5vw] h-full mt-4'>
           <div>
             <h5 className='font-medium text-2xl text-mineshaft-900 dark:text-mineshaft-100'>
               {name}, {sys.country}
@@ -36,9 +36,9 @@ const TopBar = () => {
   else {
     return (
       <div className='grid place-items-center h-[6.7vh] w-screen h-2 mt-[3vh]'>
-        {/* <div>
+        <div>
           <Spinner h='8' w='8' />
-        </div> */}
+        </div>
       </div>
     );
   }

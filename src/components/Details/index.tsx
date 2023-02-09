@@ -20,7 +20,7 @@ const Details = () => {
     },
     {
       icon: <Barometer />,
-      name: "Bar.",
+      name: "Pressure",
       value: `${main.pressure.toFixed(0)} mb`,
     },
     {
@@ -31,9 +31,9 @@ const Details = () => {
   ];
 
   return (
-    <div className='mt-[0.1vh] animate-showUP'>
-      <div className='grid place-items-center text-[.9063rem] bg-mineshaft-100 text-mineshaft-900 dark:bg-mineshaft-600 dark:text-mineshaft-200 rounded-[1.25rem] h-[11.8vh] w-[90.7vw]'>
-        <div className='grid gap-x-[1.7rem] grid-rows-2 grid-cols-2 w-[80vw] h-[9vh]'>
+    <div className='mt-[0.1vh] h-[12vh] md:h-[30vh] md:w-12/12'>
+      <div className='grid place-items-center h-full text-[.9063rem] bg-mineshaft-100 text-mineshaft-900 dark:bg-mineshaft-600 dark:text-mineshaft-200 md:rounded-[0px] rounded-[1.25rem] md:bg-transparent md:dark:bg-transparent'>
+        <div className='grid place-items-center gap-x-4 md:gap-x-4 md:gap-y-4 grid-rows-2 grid-cols-2 md:grid-cols-1 md:grid-rows-4 md:grid-flow-col md:h-6/6 md:w-10/12 h-4/6'>
           {infoData.map((item, index) => (
             <ClimateItem key={index} name={item.name} value={item.value}>
               {item.icon}

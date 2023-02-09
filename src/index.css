@@ -18,4 +18,8 @@
     width: auto;
     height: 100%;
   }
+
+  .centralize {
+    @apply mx-auto my-0;
+  }
 }

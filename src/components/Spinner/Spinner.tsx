@@ -1,6 +1,6 @@
 const Spinner = ({ h, w }) => {
   const styleContainer = `grid place-items-center w-11/12 h-5/6`;
-  const stylesvg = `w-[${w}vh] h-[${h}vh]`;
+  const stylesvg = `w-[${w}] h-[${h}]`;
 
   return (
     <div className={styleContainer} role='status'>
